@@ -8,8 +8,6 @@ const Websockets = require('libp2p-websockets')
 const WebrtcStar = require('libp2p-webrtc-star')
 // wrtc for node to supplement WebrtcStar
 const wrtc = require('wrtc')
-// Signaling Server for webrtc
-const SignalingServer = require('libp2p-webrtc-star/src/sig-server')
 
 // Stream Multiplexers
 const Mplex = require('libp2p-mplex')
