@@ -36,7 +36,6 @@ export default function Metrics ({
       })
 
       libp2p.peerStore.on('peer', (peerId) => {
-        console.log('peers', libp2p.peerStore.peers.size)
         const num = libp2p.peerStore.peers.size
         setPeerCount(num)
       })

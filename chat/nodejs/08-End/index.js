@@ -25,9 +25,10 @@ const Gossipsub = require('libp2p-gossipsub')
   const libp2p = await Libp2p.create({
     addresses: {
       listen: [
-        '/ip4/0.0.0.0/tcp/0',
-        '/ip4/0.0.0.0/tcp/0/ws',
-        `/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star/`
+        // '/ip4/0.0.0.0/tcp/0',
+        // '/ip4/0.0.0.0/tcp/0/ws',
+        // `/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star/`
+      '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star'
       ]
     },
     modules: {
@@ -46,7 +47,7 @@ const Gossipsub = require('libp2p-gossipsub')
       },
       peerDiscovery: {
         bootstrap: {
-          list: [ '/ip4/127.0.0.1/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d' ]
+          list: [ '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d' ]
         }
       },
       dht: {

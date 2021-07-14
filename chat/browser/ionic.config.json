@@ -1,0 +1,7 @@
+{
+    "name": "js-webapp",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

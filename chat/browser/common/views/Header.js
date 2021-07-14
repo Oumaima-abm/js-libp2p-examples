@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../styles/libp2p-logo.svg'
+import Logo from 'url:../styles/libp2p-logo.svg'
 
 export default function Header ({
   started

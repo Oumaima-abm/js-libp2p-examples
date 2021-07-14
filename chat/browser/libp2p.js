@@ -23,7 +23,8 @@ const createLibp2p = async (peerId) => {
     addresses: {
       listen: [
         // Add the signaling server multiaddr
-        '/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star'
+        //'/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star',
+        '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star'
       ]
     },
     modules: {
@@ -37,7 +38,7 @@ const createLibp2p = async (peerId) => {
     config: {
       peerDiscovery: {
         bootstrap: {
-          list: ['/ip4/127.0.0.1/tcp/63786/ws/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d']
+          list: ['/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d']
         }
       },
       dht: {

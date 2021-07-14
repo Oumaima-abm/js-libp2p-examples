@@ -8,8 +8,7 @@ import { getOrCreatePeerId } from '../libs/peer-id'
 import '../styles/index.css'
 
 export default function App ({
-  createLibp2p,
-  ChatProtocol
+  createLibp2p
 }) {
   const [peerId, setPeerId] = useState(null)
   const [libp2p, setLibp2p] = useState(null)
@@ -46,7 +45,7 @@ export default function App ({
       </div>
       <div className='flex h-100'>
         <Metrics libp2p={libp2p} eventBus={eventBus} />
-        <Chat libp2p={libp2p} eventBus={eventBus} ChatProtocol={ChatProtocol} />
+        <Chat libp2p={libp2p} eventBus={eventBus} />
       </div>
     </div>
   )

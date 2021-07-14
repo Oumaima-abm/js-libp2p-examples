@@ -34,16 +34,16 @@ const ChatProtocol = require('./chat-protocol')
 
   // Wildcard listen on TCP and Websocket
   const addrs = [
-    '/ip4/0.0.0.0/tcp/63785',
-    '/ip4/0.0.0.0/tcp/63786/ws'
+    '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star'
+    //'/ip4/0.0.0.0/tcp/63786/ws'
   ]
 
-  const signalingServer = await SignalingServer.start({
-    port: 15555
-  })
-  const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
-  console.info(`Signaling server running at ${ssAddr}`)
-  addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
+  // const signalingServer = await SignalingServer.start({
+  //   port: 15555
+  // })
+  // const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
+  // console.info(`Signaling server running at ${ssAddr}`)
+  // addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
 
   // Create the node
   const libp2p = await createBootstrapNode(peerId, addrs)
