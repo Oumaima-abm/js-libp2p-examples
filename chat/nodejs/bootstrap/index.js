@@ -39,12 +39,12 @@ const ChatProtocol = require('./chat-protocol')
     '/ip4/0.0.0.0/tcp/63785'
   ]
 
-  //  const signalingServer = await SignalingServer.start({
-  //    port: 15555
-  //  })
-  //  const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
-  //  console.info(`Signaling server running at ${ssAddr}`)
-  //  //addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
+   const signalingServer = await SignalingServer.start({
+     port: 15555
+   })
+   const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
+   console.info(`Signaling server running at ${ssAddr}`)
+   addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
    addrs.push('/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d')
 
   // Create the node
@@ -102,7 +102,6 @@ const ChatProtocol = require('./chat-protocol')
     try {
       // Publish the message
       await pubsubChat.send(message)
-      //console.log('msg sent')
     } catch (err) {
       console.error('Could not publish chat', err)
     }

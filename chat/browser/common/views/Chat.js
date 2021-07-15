@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Message from './Message'
 
 // Chat over Pubsub
- import PubsubChat from '../libs/chat'
+import PubsubChat from '../libs/chat'
 
 export default function Chat ({
   libp2p,
@@ -11,19 +11,17 @@ export default function Chat ({
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
   const [chatClient, setChatClient] = useState(null)
-  // eslint-disable-next-line
   const [peers, setPeers] = useState({})
 
   /**
    * Sends the current message in the chat field
    */
-   const sendMessage = async () => {
+  const sendMessage = async () => {
     setMessage('')
     if (!message) return
-    // Check for commands before sending the message
-    // Just return early if a command was found
+
     if (chatClient.checkCommand(message)) return
-    // No commands, send the message!
+
     try {
       await chatClient.send(message)
       console.info('Publish done')
@@ -49,6 +47,7 @@ export default function Chat ({
     // Wait for libp2p
     if (!libp2p) return
 
+    // Create the pubsub chatClient
     if (!chatClient) {
       const pubsubChat = new PubsubChat(libp2p, PubsubChat.TOPIC)
 
@@ -69,14 +68,13 @@ export default function Chat ({
       })
       // Forward stats events to the eventBus
       pubsubChat.on('stats', (stats) => eventBus.emit('stats', stats))
-      // TODO: Add the chat handler to libp2p
 
       setChatClient(pubsubChat)
     }
   })
 
   return (
-    <div className='flex flex-column w-75 pa3 h-100 bl b--black-10'>
+    <div className='flex flex-column w-50 pa3 h-100 bl b--black-10'>
       <div className='w-100 flex-auto'>
         <ul className='list pa0'>
           {messages.map((message, index) => {
