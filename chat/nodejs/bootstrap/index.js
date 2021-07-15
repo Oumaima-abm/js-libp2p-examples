@@ -8,8 +8,6 @@ const Websockets = require('libp2p-websockets')
 const WebrtcStar = require('libp2p-webrtc-star')
 // wrtc for node to supplement WebrtcStar
 const wrtc = require('wrtc')
-const SignalingServer = require('libp2p-webrtc-star/src/sig-server')
-
 
 // Stream Multiplexers
 const Mplex = require('libp2p-mplex')
@@ -34,18 +32,16 @@ const ChatProtocol = require('./chat-protocol')
 
   // Wildcard listen on TCP and Websocket
   const addrs = [
-    '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star',
-    '/ip4/0.0.0.0/tcp/63786/ws',
-    '/ip4/0.0.0.0/tcp/63785'
+    '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star'
+    //'/ip4/0.0.0.0/tcp/63786/ws'
   ]
 
-   const signalingServer = await SignalingServer.start({
-     port: 15555
-   })
-   const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
-   console.info(`Signaling server running at ${ssAddr}`)
-   addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
-   addrs.push('/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d')
+  // const signalingServer = await SignalingServer.start({
+  //   port: 15555
+  // })
+  // const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
+  // console.info(`Signaling server running at ${ssAddr}`)
+  // addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
 
   // Create the node
   const libp2p = await createBootstrapNode(peerId, addrs)
