@@ -25,9 +25,9 @@ const Gossipsub = require('libp2p-gossipsub')
   const libp2p = await Libp2p.create({
     addresses: {
       listen: [
-         '/ip4/0.0.0.0/tcp/0',
-         '/ip4/0.0.0.0/tcp/0/ws',
-         `/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star/`,
+        // '/ip4/0.0.0.0/tcp/0',
+        // '/ip4/0.0.0.0/tcp/0/ws',
+        // `/ip4/127.0.0.1/tcp/15555/ws/p2p-webrtc-star/`
       '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star'
       ]
     },
@@ -53,7 +53,7 @@ const Gossipsub = require('libp2p-gossipsub')
           list: [
             '/dns4/wrtc-star2.sjc.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
             '/dnsaddr/bootstrap.libp2p.io/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
-            // '/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
+            //'/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
             // '/dnsaddr/bootstrap.libp2p.io/p2p/QmZa1sAxajnQjVM8WjWXoMbmPd7NsWhfKsPkErzpm9wGkp',
             // '/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa',
             // '/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt'
