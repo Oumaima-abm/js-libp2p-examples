@@ -25,7 +25,8 @@
     "libp2p-websockets": "^0.15.5",
     "peer-id": "^0.14.1",
     "protons": "^2.0.0",
-    "uint8arrays": "^1.1.0"
+    "uint8arrays": "^1.1.0",
+    "wrtc": "^0.4.7"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

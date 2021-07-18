@@ -41,7 +41,7 @@ const ChatProtocol = require('./chat-protocol')
   // })
   // const ssAddr = `/ip4/${signalingServer.info.host}/tcp/${signalingServer.info.port}/ws/p2p-webrtc-star`
   // console.info(`Signaling server running at ${ssAddr}`)
-  // addrs.push(`${ssAddr}/p2p/${peerId.toB58String()}`)
+   addrs.push(`${addrs}/p2p/${peerId.toB58String()}`)
 
   // Create the node
   const libp2p = await createBootstrapNode(peerId, addrs)
