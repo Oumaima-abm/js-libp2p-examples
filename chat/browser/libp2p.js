@@ -40,7 +40,7 @@ const createLibp2p = async (peerId) => {
       peerDiscovery: {
         bootstrap: {
           list: [
-            // '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
+            '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
             //  '/dnsaddr/bootstrap.libp2p.io/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
             //  '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmcrQZ6RJdpYuGvZqD5QEHAv6qX4BrQLJLQPQUrTrzdcgm',
           // '/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
