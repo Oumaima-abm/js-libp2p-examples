@@ -13,6 +13,7 @@ import Bootstrap from 'libp2p-bootstrap'
 import KadDHT from 'libp2p-kad-dht'
 // Gossipsub
 import Gossipsub from 'libp2p-gossipsub'
+const wrtc = require('wrtc')
 
 const transportKey = Websockets.prototype[Symbol.toStringTag]
 
@@ -37,14 +38,16 @@ const createLibp2p = async (peerId) => {
     },
     config: {
       peerDiscovery: {
+        autoDial: true,
         bootstrap: {
           list: [
-             '/dnsaddr/bootstrap.libp2p.io/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
+            '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
+            //  '/dnsaddr/bootstrap.libp2p.io/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
+            //  '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmcrQZ6RJdpYuGvZqD5QEHAv6qX4BrQLJLQPQUrTrzdcgm',
           // '/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
           // '/dnsaddr/bootstrap.libp2p.io/p2p/QmZa1sAxajnQjVM8WjWXoMbmPd7NsWhfKsPkErzpm9wGkp',
           // '/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa',
-          // '/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt',
-          // '/dns4/wrtc-star2.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d'
+           '/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt',
         ]
         }
       },
@@ -55,11 +58,12 @@ const createLibp2p = async (peerId) => {
         }
       },
       transport: {
-        [transportKey]: {
-          // by default websockets do not allow localhost dials
-          // let's enable it for testing purposes in this example
-          filter: filters.all
-        }
+        // [transportKey]: {
+        //   // by default websockets do not allow localhost dials
+        //   // let's enable it for testing purposes in this example
+        //   filter: filters.all
+        // }
+        [WebrtcStar.prototype[Symbol.toStringTag]]:{wrtc}
       }
     }
   })
