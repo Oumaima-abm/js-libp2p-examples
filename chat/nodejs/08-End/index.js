@@ -46,6 +46,7 @@ const Gossipsub = require('libp2p-gossipsub')
         }
       },
       peerDiscovery: {
+        autoDial: true,
         bootstrap: {
           list: [ '/dnsaddr/bootstrap.libp2p.io/p2p/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d',
           // '/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb',
